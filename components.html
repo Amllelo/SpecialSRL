@@ -1,0 +1,435 @@
+<!-- ==========================================
+     COMPONENTES REUTILIZABLES HTML
+     Special Dog - Special Cat
+     ========================================== -->
+
+<!-- BOTÓN PRIMARIO -->
+<template id="btn-primary-template">
+    <button class="btn-primary">
+        <slot name="text">Botón</slot>
+    </button>
+</template>
+
+<!-- BOTÓN SECUNDARIO -->
+<template id="btn-secondary-template">
+    <button class="btn-secondary">
+        <slot name="text">Botón</slot>
+    </button>
+</template>
+
+<!-- TARJETA CARACTERÍSTICA -->
+<template id="feature-card-template">
+    <div class="feature-card">
+        <div class="feature-icon"><slot name="icon">✨</slot></div>
+        <h3><slot name="title">Título</slot></h3>
+        <p><slot name="description">Descripción</slot></p>
+    </div>
+</template>
+
+<!-- TARJETA PRODUCTO -->
+<template id="product-card-template">
+    <div class="product-card">
+        <div class="product-image"><slot name="emoji">🐕</slot></div>
+        <div class="product-info">
+            <h3><slot name="name">Producto</slot></h3>
+            <p><slot name="description">Descripción</slot></p>
+            <span class="badge"><slot name="badge">Badge</slot></span>
+        </div>
+    </div>
+</template>
+
+<!-- ELEMENTO VALOR -->
+<template id="value-item-template">
+    <div class="value-item">
+        <div class="value-icon"><slot name="icon">✓</slot></div>
+        <h3><slot name="name">Valor</slot></h3>
+        <p><slot name="description">Descripción</slot></p>
+    </div>
+</template>
+
+<!-- NAVEGACIÓN -->
+<template id="nav-link-template">
+    <li>
+        <a href="#"><slot name="text">Link</slot></a>
+    </li>
+</template>
+
+<!-- SECCIÓN GENÉRICA -->
+<template id="section-template">
+    <section class="section-container">
+        <h2 class="section-title"><slot name="title">Título</slot></h2>
+        <p class="section-subtitle"><slot name="subtitle">Subtítulo</slot></p>
+        <div class="section-content">
+            <slot name="content">Contenido</slot>
+        </div>
+    </section>
+</template>
+
+<!-- MODAL -->
+<template id="modal-template">
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2><slot name="title">Título</slot></h2>
+            <div class="modal-body">
+                <slot name="body">Contenido</slot>
+            </div>
+            <div class="modal-footer">
+                <slot name="footer">
+                    <button class="btn-secondary modal-close">Cerrar</button>
+                </slot>
+            </div>
+        </div>
+    </div>
+</template>
+
+<!-- BADGE -->
+<template id="badge-template">
+    <span class="badge">
+        <slot name="text">Badge</slot>
+    </span>
+</template>
+
+<!-- ICONO SOCIAL -->
+<template id="social-icon-template">
+    <a href="#" class="social-icon" aria-label="social-link">
+        <slot name="icon">📱</slot>
+    </a>
+</template>
+
+<!-- TESTIMONIAL -->
+<template id="testimonial-template">
+    <div class="testimonial-card">
+        <div class="testimonial-stars"><slot name="stars">⭐⭐⭐⭐⭐</slot></div>
+        <p class="testimonial-text"><slot name="text">Testimonial</slot></p>
+        <p class="testimonial-author"><slot name="author">Autor</slot></p>
+    </div>
+</template>
+
+<!-- ESTADÍSTICA -->
+<template id="stat-template">
+    <div class="stat-item">
+        <div class="stat-number"><slot name="number">0</slot></div>
+        <p class="stat-label"><slot name="label">Label</slot></p>
+    </div>
+</template>
+
+<!-- GALERÍA ITEM -->
+<template id="gallery-item-template">
+    <div class="gallery-item">
+        <img src="" alt="gallery-item" class="gallery-image">
+        <h4><slot name="title">Título</slot></h4>
+    </div>
+</template>
+
+<!-- ACORDEÓN ITEM -->
+<template id="accordion-item-template">
+    <div class="accordion-item">
+        <button class="accordion-header">
+            <slot name="title">Pregunta</slot>
+            <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-content" style="display: none;">
+            <div class="accordion-body">
+                <slot name="answer">Respuesta</slot>
+            </div>
+        </div>
+    </div>
+</template>
+
+<!-- ALERTA -->
+<template id="alert-template">
+    <div class="alert alert-info">
+        <span class="alert-icon">ℹ️</span>
+        <slot name="message">Mensaje</slot>
+        <button class="alert-close">&times;</button>
+    </div>
+</template>
+
+<!-- FORMULARIO SIMPLE -->
+<template id="form-group-template">
+    <div class="form-group">
+        <label for="input"><slot name="label">Etiqueta</slot></label>
+        <input 
+            type="text" 
+            id="input" 
+            class="form-input"
+            placeholder="Escribe aquí"
+        >
+    </div>
+</template>
+
+<!-- TARJETA INFORMACIÓN -->
+<template id="info-card-template">
+    <div class="info-card">
+        <div class="info-icon"><slot name="icon">📌</slot></div>
+        <h3><slot name="title">Título</slot></h3>
+        <p><slot name="description">Descripción</slot></p>
+    </div>
+</template>
+
+<!-- CONTADOR ANIMADO -->
+<template id="counter-template">
+    <div class="counter-item">
+        <div class="counter-value" data-target="0">0</div>
+        <p class="counter-label"><slot name="label">Label</slot></p>
+    </div>
+</template>
+
+<!-- TABS/PESTAÑAS -->
+<template id="tab-container-template">
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <slot name="tabs">Pestañas</slot>
+        </div>
+        <div class="tab-content">
+            <slot name="content">Contenido</slot>
+        </div>
+    </div>
+</template>
+
+<!-- BREADCRUMB (Migas de pan) -->
+<template id="breadcrumb-template">
+    <nav class="breadcrumb">
+        <ol>
+            <slot name="items">
+                <li><a href="#">Inicio</a></li>
+                <li>Página actual</li>
+            </slot>
+        </ol>
+    </nav>
+</template>
+
+<!-- SPINNER/CARGADOR -->
+<template id="spinner-template">
+    <div class="spinner">
+        <div class="spinner-ring"></div>
+        <p class="spinner-text"><slot name="text">Cargando...</slot></p>
+    </div>
+</template>
+
+<!-- TARJETA CON IMAGEN -->
+<template id="image-card-template">
+    <div class="image-card">
+        <img src="" alt="card-image" class="card-image">
+        <div class="card-content">
+            <h3><slot name="title">Título</slot></h3>
+            <p><slot name="description">Descripción</slot></p>
+        </div>
+    </div>
+</template>
+
+<!-- COMENTARIO -->
+<template id="comment-template">
+    <div class="comment">
+        <div class="comment-avatar">👤</div>
+        <div class="comment-body">
+            <h4 class="comment-author"><slot name="author">Autor</slot></h4>
+            <p class="comment-text"><slot name="text">Comentario</slot></p>
+            <time class="comment-time"><slot name="time">Hace 2 horas</slot></time>
+        </div>
+    </div>
+</template>
+
+<!-- LISTA CON VIÑETAS PERSONALIZADA -->
+<template id="custom-list-template">
+    <ul class="custom-list">
+        <li><span class="list-icon">✓</span><slot name="item">Elemento</slot></li>
+    </ul>
+</template>
+
+<!-- TOOLTIP (Sugerencia) -->
+<template id="tooltip-template">
+    <div class="tooltip-wrapper">
+        <span class="tooltip-trigger"><slot name="trigger">?</slot></span>
+        <div class="tooltip-content"><slot name="content">Contenido tooltip</slot></div>
+    </div>
+</template>
+
+<!-- NOTIFICACIÓN -->
+<template id="notification-template">
+    <div class="notification notification-success">
+        <span class="notification-icon">✓</span>
+        <span class="notification-text"><slot name="message">Mensaje</slot></span>
+    </div>
+</template>
+
+<!-- DIVIDER (Divisor) -->
+<template id="divider-template">
+    <hr class="divider">
+</template>
+
+<!-- BUTTON GROUP (Grupo de botones) -->
+<template id="button-group-template">
+    <div class="button-group">
+        <slot name="buttons">Botones</slot>
+    </div>
+</template>
+
+<!-- HERO PEQUEÑO -->
+<template id="mini-hero-template">
+    <section class="mini-hero">
+        <h1><slot name="title">Título</slot></h1>
+        <p><slot name="subtitle">Subtítulo</slot></p>
+    </section>
+</template>
+
+<!-- ESTILOS PARA COMPONENTES (agregar a styles.css) -->
+<style>
+/* Modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 2rem;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Acordeón */
+.accordion-item {
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 1rem;
+    background: #f9f9f9;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.accordion-header:hover {
+    background: #f0f0f0;
+}
+
+.accordion-content {
+    padding: 1rem;
+    background: white;
+}
+
+/* Alerta */
+.alert {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.alert-info {
+    background: #e3f2fd;
+    border-left: 4px solid #2196F3;
+    color: #1976D2;
+}
+
+.alert-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-left: auto;
+}
+
+/* Spinner */
+.spinner {
+    text-align: center;
+    padding: 2rem;
+}
+
+.spinner-ring {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #D97757;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Tooltip */
+.tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-content {
+    visibility: hidden;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tooltip-wrapper:hover .tooltip-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Formulario */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #D97757;
+    box-shadow: 0 0 0 3px rgba(217, 119, 87, 0.1);
+}
+</style>

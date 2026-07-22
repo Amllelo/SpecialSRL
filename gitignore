@@ -1,0 +1,121 @@
+# ==========================================
+# DEPENDENCIAS
+# ==========================================
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# ==========================================
+# ARCHIVOS DEL SISTEMA
+# ==========================================
+.DS_Store
+Thumbs.db
+.env
+.env.local
+.env.*.local
+
+# ==========================================
+# IDEs Y EDITORES
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.sublime-project
+
+# ==========================================
+# ARCHIVOS TEMPORALES
+# ==========================================
+*.tmp
+*.temp
+*.log
+*.cache
+.cache/
+dist/
+build/
+
+# ==========================================
+# COMPILADOS Y MINIFICADOS
+# ==========================================
+*.min.js
+*.min.css
+*.min.html
+
+# ==========================================
+# DIRECTORIOS DE TESTING
+# ==========================================
+coverage/
+.nyc_output/
+test/fixtures/
+test/temp/
+
+# ==========================================
+# DEPLOYMENT
+# ==========================================
+.netlify/
+.vercel/
+.firebase/
+.firebase-cache/
+.now/
+
+# ==========================================
+# BACKUP
+# ==========================================
+*.bak
+*.backup
+*.old
+~*
+
+# ==========================================
+# OS FILES
+# ==========================================
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ==========================================
+# CONFIGURACIÓN LOCAL
+# ==========================================
+local.json
+secrets.json
+config.local.js
+
+# ==========================================
+# DATABASE
+# ==========================================
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+
+# ==========================================
+# ARCHIVOS GRANDES
+# ==========================================
+*.zip
+*.tar
+*.gz
+*.rar
+
+# ==========================================
+# DEPENDENCIAS TERCEROS
+# ==========================================
+vendor/
+bower_components/
+
+# ==========================================
+# ARCHIVOS ESPECÍFICOS DEL PROYECTO
+# ==========================================
+# (Agrega tus propios archivos según sea necesario)

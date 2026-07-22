@@ -1,0 +1,98 @@
+{
+  "name": "Special Dog-Special Cat",
+  "short_name": "Special Pet",
+  "description": "Alimentos premium para perros y gatos. Nutrición de calidad para tus mascotas.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F9F6F2",
+  "theme_color": "#8B5A3C",
+  "categories": ["shopping", "business"],
+  
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%238B5A3C' width='192' height='192'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='120' fill='white' font-weight='bold'>🐕🐱</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect fill='%238B5A3C' width='512' height='512'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='300' fill='white' font-weight='bold'>🐕🐱</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23D97757' width='192' height='192'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='120' fill='white' font-weight='bold'>S</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 720'><rect fill='%23F9F6F2' width='540' height='720'/><text x='50%' y='50%' text-anchor='middle' font-size='60' fill='%238B5A3C' font-weight='bold'>Special Dog-Special Cat</text></svg>",
+      "sizes": "540x720",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'><rect fill='%23F9F6F2' width='1280' height='720'/><text x='50%' y='50%' text-anchor='middle' font-size='60' fill='%238B5A3C' font-weight='bold'>Special Dog-Special Cat</text></svg>",
+      "sizes": "1280x720",
+      "type": "image/svg+xml",
+      "form_factor": "wide"
+    }
+  ],
+  
+  "shortcuts": [
+    {
+      "name": "Productos",
+      "short_name": "Productos",
+      "description": "Ver nuestros productos",
+      "url": "/#productos",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23D97757' width='192' height='192'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='120' fill='white'>🛍️</text></svg>",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Contacto",
+      "short_name": "Contacto",
+      "description": "Contactar con nosotros",
+      "url": "/#contacto",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%236BA557' width='192' height='192'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='120' fill='white'>📞</text></svg>",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  
+  "share_target": {
+    "action": "/?shared=true",
+    "method": "POST",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  
+  "prefer_related_applications": false,
+  "related_applications": [],
+  
+  "screenshots_dark": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 720'><rect fill='%232C2C2C' width='540' height='720'/><text x='50%' y='50%' text-anchor='middle' font-size='60' fill='%23D97757' font-weight='bold'>Special Dog-Special Cat</text></svg>",
+      "sizes": "540x720",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ]
+}

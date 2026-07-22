@@ -1,0 +1,56 @@
+{
+  "name": "special-dog-cat-landing",
+  "version": "1.0.0",
+  "description": "Landing page moderna para Special Dog-Special Cat S.R.L. - Alimentos premium para mascotas",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 8000 -c-1",
+    "build": "npm run minify:css && npm run minify:js",
+    "minify:css": "uglifycss styles.css > styles.min.css",
+    "minify:js": "uglifyjs script.js > script.min.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "live-server",
+    "serve": "python -m http.server 8000",
+    "lint": "eslint script.js",
+    "format": "prettier --write .",
+    "deploy:netlify": "netlify deploy --prod",
+    "deploy:vercel": "vercel"
+  },
+  "keywords": [
+    "landing-page",
+    "mascotas",
+    "perros",
+    "gatos",
+    "alimentos-premium",
+    "veterinaria",
+    "pet-food",
+    "responsive",
+    "modern",
+    "html5",
+    "css3",
+    "javascript"
+  ],
+  "author": "Special Dog - Special Cat S.R.L.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tu-usuario/special-dog-cat.git"
+  },
+  "homepage": "https://specialdogcat.com",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2",
+    "uglify-js": "^3.17.4",
+    "uglifycss": "^0.0.29",
+    "eslint": "^8.50.0",
+    "prettier": "^3.0.0",
+    "netlify-cli": "^17.0.0",
+    "vercel": "^34.0.0"
+  },
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

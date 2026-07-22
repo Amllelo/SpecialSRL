@@ -1,0 +1,229 @@
+{
+  "empresa": {
+    "nombre": "Special Dog - Special Cat S.R.L.",
+    "tagline": "Nutrición Premium para tus Mascotas",
+    "descripcion": "Microempresa dedicada a la comercialización de alimentos balanceados premium para perros y gatos",
+    "pais": "Paraguay",
+    "ciudad": "Asunción",
+    "año_fundacion": 2024,
+    "tipo_empresa": "S.R.L.",
+    "sector": "Pet Food / Alimentos para Mascotas"
+  },
+  
+  "contacto": {
+    "email": "contacto@specialdogcat.com.py",
+    "telefonos": ["+595 (ejemplo)", "WhatsApp"],
+    "direccion": "Asunción, Paraguay",
+    "redes_sociales": {
+      "facebook": "https://facebook.com/specialdogcat",
+      "instagram": "@specialdogcat",
+      "tiktok": "@specialdogcat",
+      "linkedin": "special-dog-cat"
+    }
+  },
+
+  "colores": {
+    "primary_brown": "#8B5A3C",
+    "accent_orange": "#D97757",
+    "accent_green": "#6BA557",
+    "cream": "#F9F6F2",
+    "dark_text": "#2C2C2C",
+    "light_text": "#666666"
+  },
+
+  "tipografia": {
+    "fuente_principal": "Segoe UI, Tahoma, Geneva, Verdana, sans-serif",
+    "fuente_titulos": "Segoe UI",
+    "fuente_cuerpo": "Segoe UI"
+  },
+
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Adultos",
+      "emoji": "🐕",
+      "descripcion": "Fórmula balanceada para perros y gatos adultos. Mantiene su peso y vitalidad.",
+      "badge": "Para Adultos",
+      "caracteristicas": [
+        "Para perros y gatos adultos",
+        "Peso y energía balanceada",
+        "Ingredientes premium"
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Cachorros",
+      "emoji": "🐶",
+      "descripcion": "Nutrientes esenciales para el crecimiento y desarrollo óptimo de cachorros.",
+      "badge": "Especial",
+      "caracteristicas": [
+        "Para cachorros en desarrollo",
+        "Alto en proteína",
+        "Nutrientes para crecimiento"
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "Felinos",
+      "emoji": "🐈",
+      "descripcion": "Fórmulas específicas para gatos, considerando sus necesidades únicas.",
+      "badge": "Para Gatos",
+      "caracteristicas": [
+        "Formulado para gatos",
+        "Nutrientes específicos felinos",
+        "Sin colorantes artificiales"
+      ]
+    },
+    {
+      "id": 4,
+      "nombre": "Senior",
+      "emoji": "👴",
+      "descripcion": "Nutrición especial para mascotas adultas mayores con cuidados específicos.",
+      "badge": "Plus",
+      "caracteristicas": [
+        "Para mascotas adultas mayores",
+        "Nutrientes para articulaciones",
+        "Digestión mejorada"
+      ]
+    }
+  ],
+
+  "caracteristicas": [
+    {
+      "id": 1,
+      "icono": "✨",
+      "titulo": "Ingredientes Premium",
+      "descripcion": "Seleccionamos cuidadosamente cada ingrediente para garantizar máxima calidad y valor nutricional en cada bolsa."
+    },
+    {
+      "id": 2,
+      "icono": "🧬",
+      "titulo": "Sin Colorantes Artificiales",
+      "descripcion": "100% natural. Nuestros alimentos no contienen colorantes sintéticos, solo nutrición pura para tu mascota."
+    },
+    {
+      "id": 3,
+      "icono": "👨‍⚕️",
+      "titulo": "Asesoramiento Personalizado",
+      "descripcion": "Nuestro equipo te ayuda a elegir el alimento más adecuado según la edad, tamaño y necesidades de tu mascota."
+    },
+    {
+      "id": 4,
+      "icono": "🌿",
+      "titulo": "Responsabilidad Ambiental",
+      "descripcion": "Utilizamos bolsas biodegradables para cuidar el planeta mientras cuidamos a tus mascotas."
+    },
+    {
+      "id": 5,
+      "icono": "❤️",
+      "titulo": "Bienestar Animal",
+      "descripcion": "Cada producto está diseñado para mejorar la salud, vitalidad y calidad de vida de perros y gatos."
+    },
+    {
+      "id": 6,
+      "icono": "⭐",
+      "titulo": "Relación Calidad-Precio",
+      "descripcion": "Premium no significa caro. Ofrecemos excelente calidad a precios competitivos."
+    }
+  ],
+
+  "valores": [
+    {
+      "id": 1,
+      "icono": "✓",
+      "nombre": "Compromiso",
+      "descripcion": "Dedicación total en productos y servicios de excelencia"
+    },
+    {
+      "id": 2,
+      "icono": "⭐",
+      "nombre": "Calidad",
+      "descripcion": "Ingredientes cuidadosamente seleccionados"
+    },
+    {
+      "id": 3,
+      "icono": "🛡️",
+      "nombre": "Responsabilidad",
+      "descripcion": "Promovemos cuidado y bienestar animal"
+    },
+    {
+      "id": 4,
+      "icono": "🤝",
+      "nombre": "Confianza",
+      "descripcion": "Relaciones sólidas con nuestros clientes"
+    },
+    {
+      "id": 5,
+      "icono": "🌍",
+      "nombre": "Respeto",
+      "descripcion": "Por nuestros clientes y el medio ambiente"
+    },
+    {
+      "id": 6,
+      "icono": "🚀",
+      "nombre": "Innovación",
+      "descripcion": "Mejora continua en productos y servicio"
+    }
+  ],
+
+  "mision": "Brindar alimentos balanceados premium para perros y gatos que contribuyan a una nutrición saludable, al bienestar y a una mejor calidad de vida de las mascotas. Nos comprometemos a ofrecer productos de alta calidad, respaldados por una atención personalizada, asesoramiento confiable y un servicio eficiente.",
+
+  "vision": "Ser una empresa reconocida y referente en la comercialización de alimentos balanceados premium para perros y gatos, destacándonos por la calidad de nuestros productos, la excelencia en el servicio y el compromiso con la salud y el bienestar de las mascotas.",
+
+  "objetivo_general": "Posicionar a Special Dog – Special Cat SRL como una microempresa líder y referente en la comercialización de alimentos balanceados premium para perros y gatos, ofreciendo productos de excelente calidad que promuevan una alimentación saludable y equilibrada.",
+
+  "objetivos_especificos": [
+    "Comercializar alimentos balanceados premium elaborados con ingredientes de alta calidad y libres de colorantes artificiales.",
+    "Brindar asesoramiento personalizado a los clientes para que puedan elegir el alimento más adecuado según las necesidades de sus mascotas.",
+    "Fidelizar a los clientes mediante una atención cercana, productos confiables y excelente servicio.",
+    "Incrementar el reconocimiento de la marca en el mercado, destacándose por su compromiso con la nutrición y el bienestar animal."
+  ],
+
+  "segmento_mercado": {
+    "edad": "20 a 65 años",
+    "nivel_socioeconomico": "Medio y Medio-Alto",
+    "ubicacion": "Paraguay",
+    "caracteristicas": "Propietarios de mascotas que buscan alimentación premium y de calidad"
+  },
+
+  "ventajas_competitivas": [
+    "Productos premium de alta calidad",
+    "Atención personalizada",
+    "Asesoramiento nutricional",
+    "Excelente relación calidad-precio",
+    "Compromiso con el bienestar animal",
+    "Responsabilidad ambiental con bolsas biodegradables"
+  ],
+
+  "metadatos": {
+    "titulo": "Special Dog-Special Cat | Alimentos Premium para Mascotas",
+    "descripcion": "Alimentos balanceados premium para perros y gatos sin colorantes artificiales. Nutrición de calidad para tus mascotas.",
+    "keywords": "alimentos mascotas, perros, gatos, premium, balanceado, nutricion, Paraguay",
+    "autor": "Special Dog - Special Cat S.R.L.",
+    "idioma": "es"
+  },
+
+  "redes_comerciales": {
+    "plataformas_venta": [
+      "Pet shops",
+      "Veterinarias",
+      "Distribuidores autorizados",
+      "Tienda online"
+    ],
+    "canales_marketing": [
+      "Redes sociales",
+      "Publicidad digital",
+      "Alianzas veterinarias",
+      "Eventos de mascotas",
+      "Email marketing"
+    ]
+  },
+
+  "kpis": {
+    "incremento_ventas": "20% primer año",
+    "satisfaccion_cliente": "90%+",
+    "crecimiento_redes": "30%",
+    "clientes_frecuentes": "100+",
+    "alianzas_establecidas": "10+"
+  }
+}
