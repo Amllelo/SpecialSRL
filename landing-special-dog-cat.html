@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Dog-Special Cat | Alimentos Premium para Mascotas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-brown: #8B5A3C;
+            --accent-orange: #D97757;
+            --accent-green: #6BA557;
+            --cream: #F9F6F2;
+            --dark-text: #2C2C2C;
+            --light-text: #666666;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* HEADER & NAV */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-brown);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--accent-orange);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-orange);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: var(--accent-orange);
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-orange);
+        }
+
+        .cta-button:hover {
+            background: var(--primary-brown);
+            border-color: var(--primary-brown);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, var(--cream) 0%, #FBF8F4 100%);
+            padding: 5rem 2rem;
+            min-height: calc(100vh - 70px);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            right: -200px;
+            top: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(217, 119, 87, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--primary-brown);
+            line-height: 1.2;
+            letter-spacing: -2px;
+        }
+
+        .hero-text h1 span {
+            color: var(--accent-orange);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--accent-orange);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-brown);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(139, 90, 60, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--accent-orange);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid var(--accent-orange);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-orange);
+            color: white;
+            box-shadow: 0 8px 20px rgba(217, 119, 87, 0.3);
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pet-illustration {
+            font-size: 8rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* FEATURES SECTION */
+        .features {
+            padding: 5rem 2rem;
+            background: white;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--primary-brown);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--light-text);
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #FAFAFA 0%, #F3F1ED 100%);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-orange);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #FFF9F5 0%, #F8F5F0 100%);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-brown);
+        }
+
+        .feature-card p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+        }
+
+        /* PRODUCTS SECTION */
+        .products {
+            background: var(--cream);
+            padding: 5rem 2rem;
+        }
+
+        .products .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .product-info {
+            padding: 1.8rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-brown);
+        }
+
+        .product-info p {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-green);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .about .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--primary-brown);
+        }
+
+        .about-text p {
+            color: var(--light-text);
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-visual {
+            font-size: 6rem;
+            text-align: center;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* VALUES SECTION */
+        .values {
+            background: linear-gradient(135deg, #8B5A3C 0%, #A06D4A 100%);
+            color: white;
+            padding: 5rem 2rem;
+        }
+
+        .values .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .values .section-title,
+        .values .section-subtitle {
+            color: white;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-item {
+            text-align: center;
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .value-item p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: var(--cream);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            color: var(--primary-brown);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            margin-bottom: 2rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark-text);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--accent-orange);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .pet-illustration {
+                font-size: 5rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .about .container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-visual {
+                font-size: 4rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* SCROLL ANIMATIONS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <div class="logo">Special <span>Pet</span></div>
+            <ul>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#valores">Valores</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <a href="#contacto" class="cta-button">Comprar Ahora</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Nutrición <span>Premium</span> para tus Mascotas</h1>
+                <p>Alimentos balanceados elaborados con ingredientes de alta calidad, sin colorantes artificiales. Porque tu perro y gato merecen lo mejor.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">Explorar Productos</button>
+                    <button class="btn-secondary">Conocer Más</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="pet-illustration">🐕🐱</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+        <h2 class="section-title">¿Por qué Elegirnos?</h2>
+        <p class="section-subtitle">Diferencia que notas en cada bocado</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Ingredientes Premium</h3>
+                <p>Seleccionamos cuidadosamente cada ingrediente para garantizar máxima calidad y valor nutricional en cada bolsa.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧬</div>
+                <h3>Sin Colorantes Artificiales</h3>
+                <p>100% natural. Nuestros alimentos no contienen colorantes sintéticos, solo nutrición pura para tu mascota.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👨‍⚕️</div>
+                <h3>Asesoramiento Personalizado</h3>
+                <p>Nuestro equipo te ayuda a elegir el alimento más adecuado según la edad, tamaño y necesidades de tu mascota.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌿</div>
+                <h3>Responsabilidad Ambiental</h3>
+                <p>Utilizamos bolsas biodegradables para cuidar el planeta mientras cuidamos a tus mascotas.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">❤️</div>
+                <h3>Bienestar Animal</h3>
+                <p>Cada producto está diseñado para mejorar la salud, vitalidad y calidad de vida de perros y gatos.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⭐</div>
+                <h3>Relación Calidad-Precio</h3>
+                <p>Premium no significa caro. Ofrecemos excelente calidad a precios competitivos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products" id="productos">
+        <div class="container">
+            <h2 class="section-title">Nuestros Productos</h2>
+            <p class="section-subtitle">Formulaciones adaptadas para cada etapa de vida</p>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">🐕</div>
+                    <div class="product-info">
+                        <h3>Adultos</h3>
+                        <p>Fórmula balanceada para perros y gatos adultos. Mantiene su peso y vitalidad.</p>
+                        <span class="badge">Para Adultos</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🐶</div>
+                    <div class="product-info">
+                        <h3>Cachorros</h3>
+                        <p>Nutrientes esenciales para el crecimiento y desarrollo óptimo de cachorros.</p>
+                        <span class="badge">Especial</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🐈</div>
+                    <div class="product-info">
+                        <h3>Felinos</h3>
+                        <p>Fórmulas específicas para gatos, considerando sus necesidades únicas.</p>
+                        <span class="badge">Para Gatos</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">👴</div>
+                    <div class="product-info">
+                        <h3>Senior</h3>
+                        <p>Nutrición especial para mascotas adultas mayores con cuidados específicos.</p>
+                        <span class="badge">Plus</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="nosotros">
+        <div class="container">
+            <div class="about-text">
+                <h2>Somos Special Dog - Special Cat</h2>
+                <p>Una microempresa comprometida con la salud y bienestar de tus mascotas. Nacimos con la misión de ofrecer alimentos premium que contribuyan a una nutrición saludable y equilibrada.</p>
+                <p>Cada producto es elaborado con cuidado, utilizando tecnología de extrusión de última generación para garantizar máxima calidad, seguridad e higiene. Nuestro equipo trabaja con dedicación para que tu perro o gato reciba la mejor nutrición.</p>
+                <p>En Special Dog - Special Cat, tus mascotas no son solo animales, son parte de la familia. Por eso nos esforzamos cada día en ser una marca confiable y referente en el mercado paraguayo.</p>
+            </div>
+            <div class="about-visual">💪🐾</div>
+        </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="values" id="valores">
+        <div class="container">
+            <h2 class="section-title">Nuestros Valores</h2>
+            <p class="section-subtitle">Lo que nos define como empresa</p>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">✓</div>
+                    <h3>Compromiso</h3>
+                    <p>Dedicación total en productos y servicios de excelencia</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">⭐</div>
+                    <h3>Calidad</h3>
+                    <p>Ingredientes cuidadosamente seleccionados</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🛡️</div>
+                    <h3>Responsabilidad</h3>
+                    <p>Promovemos cuidado y bienestar animal</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🤝</div>
+                    <h3>Confianza</h3>
+                    <p>Relaciones sólidas con nuestros clientes</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🌍</div>
+                    <h3>Respeto</h3>
+                    <p>Por nuestros clientes y el medio ambiente</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🚀</div>
+                    <h3>Innovación</h3>
+                    <p>Mejora continua en productos y servicio</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="contacto">
+        <h2>¿Listo para darle lo mejor a tu mascota?</h2>
+        <p>Contáctanos hoy y descubre la diferencia Special Dog - Special Cat</p>
+        <button class="btn-primary">Comprar Ahora</button>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
+            <a href="#productos">Productos</a>
+            <a href="#nosotros">Sobre Nosotros</a>
+            <a href="#valores">Valores</a>
+            <a href="#">Política de Privacidad</a>
+        </div>
+        <p>&copy; 2024 Special Dog - Special Cat S.R.L. Todos los derechos reservados. 🐕🐱</p>
+        <p>Cuidando a tus mascotas con nutrición premium desde Paraguay</p>
+    </footer>
+
+    <script>
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .product-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Button hover effects
+        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
+            btn.addEventListener('click', function() {
+                console.log('Botón clickeado:', this.textContent);
+            });
+        });
+    </script>
+</body>
+</html>
