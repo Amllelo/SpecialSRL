@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información Nutricional - Special Dog-Special Cat</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .nutrition-page {
+            padding-top: 100px;
+        }
+
+        .nutrition-header {
+            background: linear-gradient(135deg, #D97757 0%, #E89B7D 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .nutrition-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .nutrition-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .nutrition-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .nutrition-intro {
+            background: linear-gradient(135deg, #F9F6F2 0%, #FBF8F4 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            border-left: 5px solid var(--accent-orange);
+        }
+
+        .nutrition-intro h2 {
+            color: var(--primary-brown);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .nutrition-intro p {
+            color: var(--light-text);
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+
+        .nutrition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .nutrition-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid var(--accent-orange);
+            transition: all 0.3s ease;
+        }
+
+        .nutrition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .nutrition-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary-brown);
+            margin-bottom: 1rem;
+        }
+
+        .nutrition-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .nutrition-card li {
+            padding: 0.5rem 0;
+            color: var(--light-text);
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.95rem;
+        }
+
+        .nutrition-card li:last-child {
+            border-bottom: none;
+        }
+
+        .nutrition-card strong {
+            color: var(--accent-orange);
+        }
+
+        .features-section {
+            margin: 4rem 0;
+        }
+
+        .features-section h2 {
+            font-size: 2rem;
+            color: var(--primary-brown);
+            margin-bottom: 2rem;
+            text-align: center;
+            border-bottom: 3px solid var(--accent-orange);
+            padding-bottom: 1rem;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            background: linear-gradient(135deg, #FFF9F5 0%, #FBF8F4 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-green);
+        }
+
+        .feature-item h4 {
+            color: var(--primary-brown);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature-item p {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table th {
+            background: var(--primary-brown);
+            color: white;
+            padding: 1.2rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .comparison-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+
+        .badge-green {
+            display: inline-block;
+            background: var(--accent-green);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .badge-orange {
+            display: inline-block;
+            background: var(--accent-orange);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 2rem 2rem 0 2rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--accent-orange);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: var(--primary-brown);
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .nutrition-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <div class="logo">Special <span>Pet</span></div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#productos">Productos</a></li>
+                <li><a href="index.html#nosotros">Nosotros</a></li>
+                <li><a href="nutricion.html">Nutrición</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HEADER -->
+    <div class="nutrition-header">
+        <h1>Información Nutricional</h1>
+        <p>Conoce los detalles de cada fórmula Special Dog y Special Cat Premium</p>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="nutrition-container">
+        <!-- INTRO -->
+        <div class="nutrition-intro">
+            <h2>Nuestro Enfoque Nutricional</h2>
+            <p><strong>En Special Dog - Special Cat,</strong> cada fórmula es cuidadosamente desarrollada por especialistas para garantizar la mejor nutrición en cada etapa de vida de tu mascota.</p>
+            <p>Utilizamos ingredientes seleccionados, proteínas de alto valor biológico y nutrientes esenciales que favorecen una digestión eficiente, piel sana, pelaje brillante y un sistema inmunológico fuerte.</p>
+            <p>Todos nuestros alimentos están libre de colorantes artificiales y formulados con el mayor cuidado para ofrecer máxima palatabilidad y aprovechamiento de nutrientes.</p>
+        </div>
+
+        <!-- BENEFICIOS CLAVE -->
+        <div class="features-section">
+            <h2>Beneficios Clave de Nuestras Fórmulas</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h4>🧬 Factor Proteico Óptimo</h4>
+                    <p>Proteínas de alta calidad (21-32%) adaptadas a cada etapa de vida para músculos fuertes y salud óptima.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>✨ Piel y Pelaje Brillante</h4>
+                    <p>Omegas 3 y 6 + Zinc Orgánico para una piel protegida y un pelaje más hermoso y sedoso.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>💪 Digestión Eficiente</h4>
+                    <p>Extracto de Yucca y Prebióticos MOS que optimizan la absorción de nutrientes.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🧠 Desarrollo Cerebral</h4>
+                    <p>DHA que estimula la capacidad de aprendizaje en cachorros y gatitos en desarrollo.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>❤️ Salud Cardiovascular (Gatos)</h4>
+                    <p>Taurina esencial para el corazón y visión óptima en felinos.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>⚖️ Control de Peso</h4>
+                    <p>L-Carnitina y fibras especiales en fórmulas para gatos castrados.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🔬 Minerales Orgánicos</h4>
+                    <p>Complex Life formulado con minerales quelatos para máxima biodisponibilidad.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🛡️ Sistema Inmunológico</h4>
+                    <p>Vitaminas y antioxidantes para fortalecer las defensas naturales.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ESPECIFICACIONES POR LÍNEA -->
+        <div class="features-section">
+            <h2>Especificaciones Técnicas por Línea</h2>
+
+            <h3 style="color: var(--primary-brown); margin: 2rem 0 1rem 0;">🐕 SPECIAL DOG</h3>
+            <div class="nutrition-grid">
+                <div class="nutrition-card">
+                    <h3>Cachorros</h3>
+                    <ul>
+                        <li><strong>Factor:</strong> 26</li>
+                        <li><strong>Proteína:</strong> 26%</li>
+                        <li><strong>Grasas:</strong> 12%</li>
+                        <li><strong>Fibra:</strong> 3%</li>
+                        <li><strong>Energía:</strong> 3.803 kcal/kg</li>
+                        <li><strong>Edad:</strong> Hasta 12 meses</li>
+                    </ul>
+                </div>
+                <div class="nutrition-card">
+                    <h3>Adultos Pequeño Porte</h3>
+                    <ul>
+                        <li><strong>Factor:</strong> 22</li>
+                        <li><strong>Proteína:</strong> 22%</li>
+                        <li><strong>Grasas:</strong> 10%</li>
+                        <li><strong>Fibra:</strong> 3%</li>
+                        <li><strong>Energía:</strong> 3.703 kcal/kg</li>
+                        <li><strong>Edad:</strong> +12 meses</li>
+                    </ul>
+                </div>
+                <div class="nutrition-card">
+                    <h3>Adultos Todas las Razas</h3>
+                    <ul>
+                        <li><strong>Factor:</strong> 21</li>
+                        <li><strong>Proteína:</strong> 21%</li>
+                        <li><strong>Grasas:</strong> 9%</li>
+                        <li><strong>Fibra:</strong> 5%</li>
+                        <li><strong>Energía:</strong> 3.403 kcal/kg</li>
+                        <li><strong>Edad:</strong> +12 meses</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="color: var(--primary-brown); margin: 2rem 0 1rem 0;">🐈 SPECIAL CAT</h3>
+            <div class="nutrition-grid">
+                <div class="nutrition-card">
+                    <h3>Gatitos</h3>
+                    <ul>
+                        <li><strong>Factor:</strong> 30</li>
+                        <li><strong>Proteína:</strong> 30%</li>
+                        <li><strong>Grasas:</strong> 12%</li>
+                        <li><strong>Fibra:</strong> 3%</li>
+                        <li><strong>Energía:</strong> 3.907 kcal/kg</li>
+                        <li><strong>Edad:</strong> Hasta 12 meses</li>
+                    </ul>
+                </div>
+                <div class="nutrition-card">
+                    <h3>Adultos Pescado</h3>
+                    <ul>
+                        <li><strong>Factor:</strong> 30</li>
+                        <li><strong>Proteína:</strong> 30%</li>
+                        <li><strong>Grasas:</strong> 12%</li>
+                        <li><strong>Fibra:</strong> 3%</li>
+                        <li><strong>Energía:</strong> 3.900 kcal/kg</li>
+                        <li><strong>Edad:</strong> +12 meses</li>
+                    </ul>
+                </div>
+                <div class="nutrition-card">
+                    <h3>Adultos Carne</h3>
+                    <ul>
+                        <li><strong>Factor:</strong> 30</li>
+                        <li><strong>Proteína:</strong> 30%</li>
+                        <li><strong>Grasas:</strong> 12%</li>
+                        <li><strong>Fibra:</strong> 3%</li>
+                        <li><strong>Energía:</strong> 3.900 kcal/kg</li>
+                        <li><strong>Edad:</strong> +12 meses</li>
+                    </ul>
+                </div>
+                <div class="nutrition-card">
+                    <h3>Castrados</h3>
+                    <ul>
+                        <li><strong>Factor:</strong> 32</li>
+                        <li><strong>Proteína:</strong> 32%</li>
+                        <li><strong>Grasas:</strong> 9%</li>
+                        <li><strong>Fibra:</strong> 4,5%</li>
+                        <li><strong>Energía:</strong> 3.741 kcal/kg</li>
+                        <li><strong>Edad:</strong> +12 meses</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- INGREDIENTES CLAVE -->
+        <div class="features-section">
+            <h2>Ingredientes y Componentes Principales</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Ingrediente</th>
+                        <th>Beneficio</th>
+                        <th>Presente en</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Harina de Proteína de Pollo</strong></td>
+                        <td>Proteína de alta calidad para músculos fuertes</td>
+                        <td><span class="badge-green">Todos</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Omegas 3 y 6</strong></td>
+                        <td>Piel protegida y pelaje brillante</td>
+                        <td><span class="badge-green">Todos</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Zinc Orgánico</strong></td>
+                        <td>Mejor absorción para piel y sistema inmune</td>
+                        <td><span class="badge-green">Todos</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Extracto de Yucca</strong></td>
+                        <td>Reduce olor de heces y mejora digestión</td>
+                        <td><span class="badge-green">Todos</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Prebióticos MOS</strong></td>
+                        <td>Aumenta absorción de nutrientes</td>
+                        <td><span class="badge-green">Todos</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>DHA</strong></td>
+                        <td>Estimula capacidad de aprendizaje en jóvenes</td>
+                        <td><span class="badge-orange">Cachorros y Gatitos</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Taurina</strong></td>
+                        <td>Esencial para corazón y visión en gatos</td>
+                        <td><span class="badge-orange">Special Cat</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>L-Carnitina</strong></td>
+                        <td>Control de peso en gatos castrados</td>
+                        <td><span class="badge-orange">Gatos Castrados</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Complex Life</strong></td>
+                        <td>Minerales orgánicos para biodisponibilidad</td>
+                        <td><span class="badge-green">Todos</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vitaminas Completas</strong></td>
+                        <td>Equilibrio para bienestar diario</td>
+                        <td><span class="badge-green">Todos</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- RECOMENDACIONES -->
+        <div class="nutrition-intro">
+            <h2>Recomendaciones de Uso</h2>
+            <p>✓ <strong>Selecciona el producto según la edad y tipo de mascota</strong> para garantizar nutrición óptima en cada etapa.</p>
+            <p>✓ <strong>Introduce los nuevos alimentos gradualmente</strong> durante 7-10 días, mezclando con el alimento anterior.</p>
+            <p>✓ <strong>Proporciona agua fresca</strong> constantemente durante todo el día.</p>
+            <p>✓ <strong>Consulta las porciones recomendadas</strong> según el peso de tu mascota (disponible en el empaque).</p>
+            <p>✓ <strong>Conserva en lugar fresco y seco</strong> después de abrir el empaque.</p>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-link">← Volver al Inicio</a>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#productos">Productos</a>
+            <a href="index.html#nosotros">Sobre Nosotros</a>
+            <a href="index.html#contacto">Contacto</a>
+        </div>
+        <p>&copy; 2024 Special Dog - Special Cat S.R.L. Todos los derechos reservados. 🐕🐱</p>
+        <p>Cuidando a tus mascotas con nutrición premium desde Paraguay</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

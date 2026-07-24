@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Productos - Special Dog-Special Cat</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .gallery-page {
+            padding-top: 100px;
+        }
+
+        .gallery-header {
+            background: linear-gradient(135deg, #8B5A3C 0%, #A06D4A 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .gallery-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .gallery-section {
+            margin-bottom: 4rem;
+        }
+
+        .gallery-section h2 {
+            font-size: 2rem;
+            color: var(--primary-brown);
+            margin-bottom: 2rem;
+            border-bottom: 3px solid var(--accent-orange);
+            padding-bottom: 1rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item-title {
+            padding: 1.5rem;
+        }
+
+        .gallery-item-title h3 {
+            font-size: 1.2rem;
+            color: var(--primary-brown);
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-item-title p {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 2rem 2rem 0 2rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--accent-orange);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: var(--primary-brown);
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <div class="logo">Special <span>Pet</span></div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#productos">Productos</a></li>
+                <li><a href="index.html#nosotros">Nosotros</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- GALLERY HEADER -->
+    <div class="gallery-header">
+        <h1>Galería Completa de Productos</h1>
+        <p>Todos nuestros productos Special Dog y Special Cat Premium</p>
+    </div>
+
+    <!-- GALLERY CONTENT -->
+    <div class="gallery-container">
+        <!-- SPECIAL DOG SECTION -->
+        <div class="gallery-section">
+            <h2>🐕 Special Dog - Línea para Perros</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="img-005.jpg" alt="Special Dog Cachorros">
+                    <div class="gallery-item-title">
+                        <h3>Cachorros - Sabor Carne</h3>
+                        <p>Factor 26 - 26% de proteína de alta calidad. Nutrientes esenciales para crecimiento óptimo.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="img-007.jpg" alt="Special Dog Adultos Pequeño Porte">
+                    <div class="gallery-item-title">
+                        <h3>Adultos Pequeño Porte</h3>
+                        <p>Factor 22 - Fórmula especial para perros de pequeño tamaño a partir de 12 meses.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="img-009.jpg" alt="Special Dog Adultos Todas las Razas">
+                    <div class="gallery-item-title">
+                        <h3>Adultos Todas las Razas</h3>
+                        <p>Factor 21 - Para perros adultos de todas las razas y tamaños a partir de 12 meses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SPECIAL CAT SECTION -->
+        <div class="gallery-section">
+            <h2>🐈 Special Cat - Línea para Gatos</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="img-013.jpg" alt="Special Cat Gatitos">
+                    <div class="gallery-item-title">
+                        <h3>Gatitos</h3>
+                        <p>Factor 30 - 30% de proteína de alta calidad. Incluye DHA para aprendizaje y taurina.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="img-015.jpg" alt="Special Cat Adultos Pescado">
+                    <div class="gallery-item-title">
+                        <h3>Gatos Adultos - Sabor Pescado</h3>
+                        <p>Factor 30 - Con taurina para corazón y visión. Control del pH urinario.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="img-017.jpg" alt="Special Cat Adultos Carne">
+                    <div class="gallery-item-title">
+                        <h3>Gatos Adultos - Sabor Carne</h3>
+                        <p>Factor 30 - Para gatos adultos a partir de 12 meses. Sabor irresistible a carne.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="img-019.jpg" alt="Special Cat Gatos Castrados">
+                    <div class="gallery-item-title">
+                        <h3>Gatos Castrados</h3>
+                        <p>Factor 32 - Con L-Carnitina y fibras especiales. Control de peso ideal para gatos esterilizados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SHOWCASE SECTION -->
+        <div class="gallery-section">
+            <h2>📸 Showcases de Producto</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="img-001.jpg" alt="Logo Special Dog Company">
+                    <div class="gallery-item-title">
+                        <h3>Logo Special Dog</h3>
+                        <p>Identidad visual de nuestra marca Premium.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="img-002.jpg" alt="Perros Happy">
+                    <div class="gallery-item-title">
+                        <h3>Perros Felices</h3>
+                        <p>Mascotas satisfechas con nuestros alimentos premium.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="img-003.jpg" alt="Catálogo Special Dog">
+                    <div class="gallery-item-title">
+                        <h3>Catálogo Special Dog</h3>
+                        <p>Presentación completa de nuestra línea para perros.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="img-011.jpg" alt="Catálogo Special Cat">
+                    <div class="gallery-item-title">
+                        <h3>Catálogo Special Cat</h3>
+                        <p>Colección completa de nuestros productos para gatos.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="img-012.jpg" alt="Gatos Hermosos">
+                    <div class="gallery-item-title">
+                        <h3>Gatos Hermosos</h3>
+                        <p>Compañeros felinos en armonía con nuestros alimentos.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="img-014.jpg" alt="Logo Special Cat Company">
+                    <div class="gallery-item-title">
+                        <h3>Logo Special Cat</h3>
+                        <p>Identidad visual de nuestra línea felina Premium.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-link">← Volver al Inicio</a>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#productos">Productos</a>
+            <a href="index.html#nosotros">Sobre Nosotros</a>
+            <a href="index.html#contacto">Contacto</a>
+        </div>
+        <p>&copy; 2024 Special Dog - Special Cat S.R.L. Todos los derechos reservados. 🐕🐱</p>
+        <p>Cuidando a tus mascotas con nutrición premium desde Paraguay</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
